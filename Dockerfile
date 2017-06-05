@@ -7,4 +7,4 @@ RUN \
   chmod 0755 /entrypoint.sh
 USER 1001
 
-CMD [ '/entrypoint.sh' ]
+CMD /entrypoint.sh
