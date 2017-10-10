@@ -4,6 +4,7 @@ ADD entrypoint.sh /
 USER root
 RUN \
   yum install -y epel-release && \
+  yum install -y bzip2 && \
   yum install -y jq && \
   chmod -R 0770 /etc/pki/ca-trust/extracted && \
   chmod 0755 /entrypoint.sh
