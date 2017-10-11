@@ -3,9 +3,7 @@ FROM openshift/jenkins-2-centos7
 ADD entrypoint.sh /
 USER root
 RUN \
-  yum install -y epel-release && \
-  yum install -y bzip2 && \
-  yum install -y jq && \
+  yum install -y epel-release bzip2 jq git && \
   chmod -R 0770 /etc/pki/ca-trust/extracted && \
   chmod 0755 /entrypoint.sh
 USER 1001
