@@ -1,12 +1,10 @@
 FROM openshift/jenkins-2-centos7
-
-ADD entrypoint.sh /
+COPY entrypoint.sh /var/lib/origin/
 USER root
 RUN \
-  yum install -y epel-release && \
-  yum install -y jq && \
+  yum install -y epel-release bzip2 nano net-tools && \
   chmod -R 0770 /etc/pki/ca-trust/extracted && \
-  chmod 0755 /entrypoint.sh
+  chmod 0755 /var/lib/origin/entrypoint.sh && \
+  chown 1001:1001 /var/lib/origin/entrypoint.sh
 USER 1001
-
-CMD /entrypoint.sh
+CMD /var/lib/origin/entrypoint.sh
