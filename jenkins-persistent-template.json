@@ -76,8 +76,8 @@
               ],
               "from": {
                 "kind": "ImageStreamTag",
-                "name": "openshiftjenkins",
-                "namespace": "jsilkens"
+                "name": "${JENKINS_IMAGE_STREAM_TAG}",
+                "namespace": "${NAMESPACE}"
               },
               "lastTriggeredImage": ""
             }
